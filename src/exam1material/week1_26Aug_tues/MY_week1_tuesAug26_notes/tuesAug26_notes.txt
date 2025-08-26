@@ -38,6 +38,7 @@ Taking a step back...what is logic?
 
 - analysis of an argument according to a set of rules
 - given a set of premises (and sometimes a conclusion)
+- Sometimes the premises may not make sense 
 
 
 - a VALID conclusion is one that is always true
@@ -58,12 +59,12 @@ Conclusion: Fred doesn't like pizza.
 
 
 
---> Is this a valid argument? 
+--> Is this a valid argument? YES* 
 
 
 
 (is there a hidden assumption we're making about Fred?)
-
+Yes, we are assuming that Fred is a person. Fred could be a Guinea Pig
 
 
 
@@ -71,10 +72,10 @@ Conclusion: Fred doesn't like pizza.
 ////////////////////////////////////////////////////////
 
 Logical Arguments with "OR"
-    - can be ambiguous! Why?
+    - can be ambiguous! Why? exclusive vs inclusive
 
 
-I order fries or I order chips.
+I order fries or I order chips. We assume this is exclusive because you get one or the other
 
 
 
@@ -82,16 +83,13 @@ I order fries or I order chips.
 
 
 
-- in programming? 
+- in programming? || inclusive
 
 
 
 
 "Or" in THIS class: 
-
-
-
-
+Inclusive unless otherwise stated
 
 /////////////////////////////
 
@@ -99,7 +97,7 @@ Premise 1: I'll fold the laundry or I'll do the dishes.
 Premise 2: I don't fold the laundry.
 
 --> What can I conclude? 
-
+I'll do the dishes because I do not do laundry
 
 
 
@@ -115,7 +113,7 @@ if (num < 4 || x >= 10) {
 Suppose we know "statement" is executed
 --> What can we conclude? 
 
-
+x >= 10 because the number is 5, so it is greater than 4, disproving the left side
 
 
 
@@ -132,7 +130,9 @@ if (num < 4 || x >= 10) {
 
 Suppose we know "statement" is executed
 --> What can we conclude? 
-
+num < 4 for the outer, num <2 for the inner
+Suppose num is an int
+num is 3
 
 
 ////////////////////////////////////////////////////////
@@ -140,7 +140,7 @@ Suppose we know "statement" is executed
 What rule are we seeing with an "or" statement,
 where we know that one of the statements is NOT true?
 
-
+The other side is true
 
 
 
@@ -241,7 +241,7 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is 17 here. What do we know?
 
-
+Nothing: (Might have already been 17)
 
 
 /////////////////////////////////////////////////////////
@@ -254,7 +254,7 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is 17 here. Can we conclude anything now?
 
-
+if (num < 4 || x >= 10) must have been true
 
 
 
@@ -266,6 +266,9 @@ if (num < 4 || x >= 10) {
 }
 
 --> suppose y is NOT 17 here. What do we know?
+
+if (num < 4 || x >= 10) must be false, num >= 4 AND x < 10
+DeMorgan's Law
 
 
 ///////////////////////////////////////////////////////
