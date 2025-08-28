@@ -43,12 +43,14 @@ else {
     statements3;
 }
 
-
+y >= 3 && y <= 4 is when the first statement will evaluate as false
 
 --> is it possible for "statements2" to execute?7
 
-
-
+Statement2 will not execute because the if statement will evaluate as true most of the time, so it will 
+not go to the second statement
+The second statement has to be less than 5 and equal to 7 so it will always equal false
+If we got rid of the && then the statement could be true 
 
 ////////////////////////////////////////////////////////
 
@@ -67,10 +69,25 @@ Bill claims that it's false that Mae is a knave.
 Mae tells you, "Bill would tell you that I am a knave."
 
 What types are Sarah, Bill, and Mae?
+1. If theres any statement can be written in a simpler way, rewrite it
 
 
 (How might we simplify everything?)
 
+Sarah: Bill is a knight
+Bill: Mae is a knight
+Mae: Mae tells you, "Bill would tell you that I am a knave."
+
+1. Start with one of the cases that is simpler
+
+Suppose Sarah is a knight. Then fromd her statement, Bill would have to 
+be a knight, from his statement, Mae would have to be a knight. 
+-- Mae's statement would be a lie, which is impossible with this statement
+
+Suppose instead Sarah is a knave. Then in a similar way from 
+the statements, Bill and Mae would ahve to be knaves.
+-- Her statement works since Bill would lie and say she's a knight, but she 
+lies about what he would say
 
     
 
@@ -89,7 +106,18 @@ Unicorn says: "Yesterday was one of my lying days, too."
 
 What day is it?
 
+1. Ask yourself how many possible solutions are there
+        7 (bc there are seven days)
 
+Suppose it Sunday - No, Lion couldn't say that.
+
+Tuesday/Wednesday/Friday/Saturday? - Lion nor Unicorn could say that because it is Lion's lying day
+            and it is Unicorn's truthful day
+
+Monday? - Yesterday was not one of Lion's lying days, so he could lie, 
+            BUT it was not Unicorns and she was supposed to be telling the truth
+Thursday? - Wednesday was Lion's lying days, so he is telling the truth
+            Wednesday was not Unicorn's lying day, so she was lying because it was her lying day
 
 ////////////////////////////////
 
@@ -107,6 +135,10 @@ The first one says: "I'm Tweedledum."
 The second one says: "I'm Tweedledee."
 
 Which is which? What day is it?
+Any day but Sunday, one lies one tells truth. Would both give same name.
+
+Must be Sunday. They are who they are
+(otherwise they would give the same name)
 
 
 
@@ -137,12 +169,23 @@ You don't know what day it is, but are sure that it isn’t
 The first one says: "Tweedledee owns the rattle."
 The second one says: "I'm Tweedledee!"
 
-Who gets the rattle?
+Who gets the rattle? The first twin
 
 Who is who?
+There are two cases: Either the rattle belongs to Tweedledee or Tweedledum
+
+Suppose the first twin is telling the truth. Then, Tweedledee owns the rattle.
+The second twin must be lying, so the second twin must be Tweedledum. Then Tweedledee is the first twin.
+The, we should give the rattleto the first twin. 
+
+Suppose the first twin is lying. Then,Tweedledum owns the rattle
+The second twin is telling the truth, so the second twin must be Tweedledum. 
+
 
 
 ///////////////////////////////////////////
+
+
 
 Based on Shakespeare's "Merchant of Venice".
 
@@ -186,16 +229,20 @@ Cheryl privately tells Bernard her birthday day (number).
 
 Albert says: "I don't know when Cheryl's birthday is,
     but I know Bernard doesn't know too."
+    It can't be May because it has a unique number
+    It also can't be June because they do not have a unique number
+
 
 Bernard says: "At first I didn't know when Cheryl's
     birthday is, but now I do."
-
+     It can't be the 14th because its not unique
 
 Albert says: "Then I also know when Cheryl's birthday is."
 
 
 When is it?
-
+It must be July 16th because Albert knows the birthday, this is the only option
+that are possible.
 
 
 
@@ -223,9 +270,11 @@ gates still used to design circuits
 
 
 why do we care about equivalent circuits?
+May need a smaller circuit, which saves space and money
 
 
 what about programming?
+
 
 ///////////////////////////////////////////////////
 
@@ -236,28 +285,28 @@ AND:
 
 p q  #  p ∧ q
 --------------
-T T  #    
-T F  #    
-F T  #     
-F F  #    
+T T  #  T  
+T F  #  F 
+F T  #  F   
+F F  #  F  
 
 
 OR:
 
 p q  #  p ∨ q
 --------------
-T T  #    
-T F  #    
-F T  #    
-F F  #    
+T T  #  T  
+T F  #  T  
+F T  #  T  
+F F  #  F  
 
 
-NOT:
+NOT: Just flip it!
 
 p  # ¬p
 --------
-T  # 
-F  # 
+T  # F
+F  # T
 
 ////////////////////////////////////////////////
 
@@ -275,24 +324,31 @@ Otherwise we have not.
 
 p q  #  p → q
 --------------
-T T  #    
-T F  #      
-F T  #    
-F F  #     
+T T  #    T  
+T F  #    F    
+F T  #    T  
+F F  #    T
 
+The last two are vaculously true becasue you were not in the position to break your promise
 /////////////////////////////////////////
 
 How does the implies operator relate to programming?
 
-
+if, condition statements
 
 //////////////////////////////////////////
 
 Design circuits for:
 
 ¬(p ∨ q)       (p NOR q)
-
-
+Inputs: 
+p ->                
+    What ever 
+    is true for 
+    the or 
+    statements 
+    gets negated 
+q ->
 p XOR q (with just the gates we've seen, not a specific XOR gate)
 
 
